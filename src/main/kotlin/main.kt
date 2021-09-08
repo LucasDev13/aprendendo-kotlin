@@ -50,4 +50,11 @@ fun main() {
         println("${gui.nome} -Não autenticou")
     }
 
+    val calculadoraBonificacao = CalculadoraBonificacao()
+    calculadoraBonificacao.registra(alex)
+    calculadoraBonificacao.registra(fran)
+    calculadoraBonificacao.registra(gui)
+    println("total de bonificação: ${calculadoraBonificacao.total}")
+
+
 }
