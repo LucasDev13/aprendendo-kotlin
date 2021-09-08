@@ -29,4 +29,25 @@ fun main() {
     }else{
         println("Não autenticou")
     }
+
+    val gui: Diretor = Diretor(
+        "Gui",
+        "333.333.333-33",
+        4000.0,
+        456,
+        200.0
+    )
+
+    println("nome: ${gui.nome}")
+    println("cpf: ${gui.cpf}")
+    println("salario: ${gui.salario}")
+    println("bonificaçao: ${gui.bonificacao()}")
+    println("plr: ${gui.plr}")
+
+    if (gui.autentica(456)){
+        println("${gui.nome} - Autenticou com sucesso.")
+    }else{
+        println("${gui.nome} -Não autenticou")
+    }
+
 }
