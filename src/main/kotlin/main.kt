@@ -1,71 +1,39 @@
 fun main() {
     print("Bem vindo ao bytebank: ")
 
-    val alex = Funcionario(
-        nome = "Alex",
-        cpf = "111.111.111-11",
-        salario = 1000.0
+    //cria uma conta corrente
+     val contaCorrente = ContaCorrente(
+         titular = "ALex",
+         numero = 1000
+     )
+    //cria uma conta poupança
+    val contaPoupanca = ContaPoupanca(
+        titular = "Fran",
+        numero = 1001
     )
 
-    println("nome: ${alex.nome}")
-    println("cpf: ${alex.cpf}")
-    println("salario: ${alex.salario}")
-    println("bonificaçao: ${alex.bonificacao}")
+    contaCorrente.deposita(1000.0)
+    contaPoupanca.deposita(1000.0)
 
-    val fran = Gerente(
-        nome = "Fran",
-        cpf = "222.222.222-22",
-        salario = 2000.0,
-        senha = 123456
-    )
+    println("---- Saldo conta corrente ${contaCorrente.saldo}")
+    println("Saldo conta poupanca ${contaPoupanca.saldo}")
 
-    println("nome: ${fran.nome}")
-    println("cpf: ${fran.cpf}")
-    println("salario: ${fran.salario}")
-    println("bonificaçao: ${fran.bonificacao}")
+    contaCorrente.sacar(100.0)
+    contaPoupanca.sacar(100.0)
 
-    if (fran.autentica(123456)){
-        println("Autenticou com sucesso.")
-    }else{
-        println("Não autenticou")
-    }
+    println("Saldo conta corrente, sacado -> ${contaCorrente.saldo}")
+    println("Saldo conta poupanca, sacado -> ${contaPoupanca.saldo}")
 
-    val gui: Diretor = Diretor(
-        "Gui",
-        "333.333.333-33",
-        4000.0,
-        456,
-        200.0
-    )
+    contaCorrente.transfere(100.0, contaPoupanca)
+    println("Saldo conta corrente, menos -> ${contaCorrente.saldo}")
+    println("Saldo conta poupanca, ganhou -> ${contaPoupanca.saldo}")
 
-    println("nome: ${gui.nome}")
-    println("cpf: ${gui.cpf}")
-    println("salario: ${gui.salario}")
-    println("bonificaçao: ${gui.bonificacao}")
-    println("plr: ${gui.plr}")
+    contaPoupanca.transfere(100.0, contaCorrente)
+    println("Saldo conta poupanca, menos -> ${contaPoupanca.saldo}")
+    println("Saldo conta corrente, ganhou -> ${contaCorrente.saldo}")
 
-    if (gui.autentica(456)){
-        println("${gui.nome} - Autenticou com sucesso.")
-    }else{
-        println("${gui.nome} -Não autenticou")
-    }
 
-    val maria = Analista(
-        "Maria",
-        "444.444.444",
-        3000.0
-    )
-
-    println("nome: ${maria.nome}")
-    println("cpf: ${maria.cpf}")
-    println("salario: ${maria.salario}")
-    println("bonificaçao: ${maria.bonificacao}")
-
-    val calculadoraBonificacao = CalculadoraBonificacao()
-    calculadoraBonificacao.registra(alex)
-    calculadoraBonificacao.registra(fran)
-    calculadoraBonificacao.registra(gui)
-    calculadoraBonificacao.registra(maria)
-    println("total de bonificação: ${calculadoraBonificacao.total}")
-    
 }
+
+
+
