@@ -6,7 +6,10 @@ fun testaCopiasEReferencias() {
     println("num1: $num1")
     println("num2: $num2")
 
-    val conta3 = Conta("Maria", 1003)//aponta para um objeto em memória.
+    val contaLucas = ContaCorrente("Lucas",1002)
+    contaLucas.titular = "Lucas"
+
+    val conta3 = ContaCorrente("Maria", 1003)//aponta para um objeto em memória.
     //conta3.titular = "Maria"//atribui um nome para o titular da variável de referencia conta3
     var conta4 = conta3 //a variável conta4 aponta para a mesma referencia/objeto da conta3
     conta4.titular =
