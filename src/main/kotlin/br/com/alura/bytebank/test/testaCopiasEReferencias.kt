@@ -1,3 +1,4 @@
+import br.com.alura.bytebank.model.Cliente
 import br.com.alura.bytebank.model.ContaCorrente
 
 fun testaCopiasEReferencias() {
@@ -8,14 +9,15 @@ fun testaCopiasEReferencias() {
     println("num1: $num1")
     println("num2: $num2")
 
-    val contaLucas = ContaCorrente("Lucas",1002)
-    contaLucas.titular = "Lucas"
+    val lucas = Cliente(nome = "Lucas", cpf = "", senha = 3)
 
-    val conta3 = ContaCorrente("Maria", 1003)//aponta para um objeto em memória.
+    val contaLucas = ContaCorrente(lucas,1002)
+    contaLucas.titular.nome = "Lucas"
+
+    val conta3 = ContaCorrente(Cliente(nome = "Maria", cpf ="", senha = 4), 1003)//aponta para um objeto em memória.
     //conta3.titular = "Maria"//atribui um nome para o titular da variável de referencia conta3
     var conta4 = conta3 //a variável conta4 aponta para a mesma referencia/objeto da conta3
-    conta4.titular =
-        "Fredo"//modifica o valor do titular da vraiável conta3. de Maria passa a ser Fredo. Altera o mesmo objeto.
+    conta4.titular.nome = "Fredo"//modifica o valor do titular da vraiável conta3. de Maria passa a ser Fredo. Altera o mesmo objeto.
 
     println("conta3: ${conta3.titular}")
     println("conta4: ${conta4.titular}")

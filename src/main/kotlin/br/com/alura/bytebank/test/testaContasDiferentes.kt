@@ -1,16 +1,20 @@
 import br.com.alura.bytebank.model.*
 
-fun testaConstaDiferentes() {
+fun testaContasDiferentes() {
     //cria uma conta corrente
     val contaCorrente = ContaCorrente(
-        titular = "ALex",
+        titular = Cliente(nome = "Alex", cpf = "", senha = 1),
         numero = 1000
     )
     //cria uma conta poupança
     val contaPoupanca = ContaPoupanca(
-        titular = "Fran",
+        titular = Cliente(nome = "Fran", cpf = "", senha = 2),
         numero = 1001
     )
+
+    println("titular")
+    println("nome do titular ${contaCorrente.titular.nome}")
+    println("cpf do titular ${contaCorrente.titular.cpf}")
 
     contaCorrente.deposita(1000.0)
     contaPoupanca.deposita(1000.0)
