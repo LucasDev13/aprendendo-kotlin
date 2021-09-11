@@ -3,18 +3,30 @@ import br.com.alura.bytebank.model.*
 fun testaContasDiferentes() {
     //cria uma conta corrente
     val contaCorrente = ContaCorrente(
-        titular = Cliente(nome = "Alex", cpf = "", senha = 1),
+        titular = Cliente(
+            nome = "Alex",
+            cpf = "",
+            senha = 1,
+            endereco = Endereco(logradouro = "Testa logradouro.")
+        ),
         numero = 1000
     )
     //cria uma conta poupança
     val contaPoupanca = ContaPoupanca(
-        titular = Cliente(nome = "Fran", cpf = "", senha = 2),
+        titular = Cliente(
+            nome = "Fran",
+            cpf = "",
+            senha = 2,
+            endereco = Endereco(logradouro = "Testa logradouro.")
+        ),
         numero = 1001
     )
 
-    println("titular")
+    println("titular - endereço do objeto ${contaCorrente.titular}")
     println("nome do titular ${contaCorrente.titular.nome}")
     println("cpf do titular ${contaCorrente.titular.cpf}")
+    println("logradouro do titular ${contaCorrente.titular.endereco.logradouro}")
+    println("logradouro do titular - endereço do objeto ${contaCorrente.titular.endereco}")
 
     contaCorrente.deposita(1000.0)
     contaPoupanca.deposita(1000.0)
