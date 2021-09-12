@@ -1,9 +1,33 @@
 import br.com.alura.bytebank.model.Endereco
 import br.com.alura.bytebank.test.testaAny
 import java.lang.ClassCastException
+import java.lang.NumberFormatException
 
 fun main() {
     println("início main")
+    val entrada: String = "1.0"
+    val valorRecebido: Double? = try{
+        entrada.toDouble()
+    }catch (e: NumberFormatException){
+        println("Problema na conversão!")
+        e.printStackTrace()
+        null
+    }
+
+    //if com expressão
+    val valorComTaxa: Double? = if (valorRecebido != null){
+        valorRecebido + 0.1
+    }else{
+        null
+    }
+
+    //if sem expressão.
+    if(valorComTaxa != null){
+        println("valor recebido: $valorComTaxa")
+    }else{
+        println("valor inválido")
+    }
+
     funcao1()
     println("fim main")
 }
