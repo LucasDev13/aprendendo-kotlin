@@ -1,8 +1,5 @@
 package br.com.alura.bytebank.model
 
-var totalContas = 0
-    private set
-
 abstract  class Conta(
     var titular: Cliente,
     val numero: Int
@@ -12,7 +9,7 @@ abstract  class Conta(
 
     init {
         println("Criando conta...")
-        totalContas++
+        Contador.total++
     }
 
     fun deposita(valor: Double) {
