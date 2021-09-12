@@ -13,6 +13,11 @@ fun funcao1(){
     try {
         funcao2()
     }catch (e: ClassCastException){
+        println(e.message)
+        println(e.stackTrace)
+        println(e.cause)//não tem um causa porque aconteceu a exception. vai aparecer null
+        e.printStackTrace()//vai conter a pilha de exception
+
         println("vai pego a ClassCastException.")
     }
     println("fim funcao1")
