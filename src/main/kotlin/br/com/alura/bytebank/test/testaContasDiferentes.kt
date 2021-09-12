@@ -24,7 +24,7 @@ fun testaContasDiferentes() {
 
     println("titular - endereço do objeto ${contaCorrente.titular}")
     println("nome do titular ${contaCorrente.titular.nome}")
-    println("cpf do titular ${contaCorrente.titular.cpf}") 
+    println("cpf do titular ${contaCorrente.titular.cpf}")
     println("logradouro do titular ${contaCorrente.titular.endereco.logradouro}")
     println("logradouro do titular - endereço do objeto ${contaCorrente.titular.endereco}")
 
