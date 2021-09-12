@@ -1,8 +1,16 @@
 import br.com.alura.bytebank.model.Endereco
 
 fun main() {
-    val endereco = Endereco()
-    val enderecoNovo = endereco
+    val endereco = Endereco(
+        logradouro = "Rua nada",
+        complemento = "Alura",
+        cep = "00000-000"
+    )
+    val enderecoNovo = Endereco(
+        bairro = "Rua nadaa",
+        numero = 1000,
+        cep = "00000-000"
+    )
     println(endereco.equals(enderecoNovo))
     //hashCode gera um hash que faz a identificação do objeto.
     //então o objeto sempre vai ter esse hash independente de quantas vezes chamar

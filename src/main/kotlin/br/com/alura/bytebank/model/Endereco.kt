@@ -15,4 +15,15 @@ class Endereco(
                 "cidade='$cidade', estado='$estado', " +
                 "cep='$cep', complemento='$complemento')"
     }
+
+    override fun equals(other: Any?): Boolean {
+        if(other != null && other is Endereco){
+            return this.cep == other.cep
+        }
+        return false
+    }
+
+    override fun hashCode(): Int {
+        return cep.hashCode()
+    }
 }
