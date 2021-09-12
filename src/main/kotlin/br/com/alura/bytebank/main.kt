@@ -7,8 +7,8 @@ fun main() {
         cep = "00000-000"
     )
     val enderecoNovo = Endereco(
-        bairro = "Rua nadaa",
-        numero = 1000,
+        logradouro = "Rua nada",
+        complemento = "Alura",
         cep = "00000-000"
     )
     println(endereco.equals(enderecoNovo))
