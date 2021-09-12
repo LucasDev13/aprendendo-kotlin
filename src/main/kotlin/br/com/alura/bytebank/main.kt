@@ -1,31 +1,23 @@
-import br.com.alura.bytebank.model.Endereco
+import br.com.alura.bytebank.test.testaAny
 
 fun main() {
-    val endereco = Endereco(
-        logradouro = "Rua nada",
-        complemento = "Alura",
-        cep = "00000-000"
-    )
-    val enderecoNovo = Endereco(
-        logradouro = "Rua nada",
-        complemento = "Alura",
-        cep = "00000-000"
-    )
-    println(endereco.equals(enderecoNovo))
-    //hashCode gera um hash que faz a identificação do objeto.
-    //então o objeto sempre vai ter esse hash independente de quantas vezes chamar
-    println(endereco.hashCode())
-    println(enderecoNovo.hashCode())
-
-    //toString é chamado sempre que precisamos imprimir um objeto
-    println(enderecoNovo.toString())
-    println(enderecoNovo.toString())
-
-    //outro forma de mostrar o nome do objeto
-    println("${endereco.javaClass}@${Integer.toHexString(endereco.hashCode())}")
+    println("início main")
+    funcao1()
+    println("fim main")
 }
 
-fun imprime(valor: Any): Any {
-    println(valor)
-    return valor
+fun funcao1(){
+    println("início funcao1")
+    funcao2()
+    println("fim funcao1")
 }
+
+fun funcao2() {
+    println("início funcao2")
+    for (i in 1..5){
+        println(i)
+    }
+    println("fim funcao2")
+}
+
+
